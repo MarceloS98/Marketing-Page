@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+/*  ================== 
+      Dark Mode
+================== */
+
+/* General */
+
+#darkSwitch:checked ~ main,
+#darkSwitch:checked ~ footer {
+  background-color: #1f1f1f;
+}
+
+/* Header */
+
+#darkSwitch:checked ~ header {
+  background: #1f1f1f;
+}
+
+#darkSwitch:checked ~ header nav .hamburguer label span {
+  background-color: white;
+}
+
+#darkSwitch:checked ~ header nav .logo,
+#darkSwitch:checked ~ header nav .darkSwitchBtn i,
+#darkSwitch:checked ~ header nav .darkSwitchBtn span,
+#darkSwitch:checked ~ header nav ul {
+  color: white;
+}
+
+/* Section 1 - About */
+
+#darkSwitch:checked ~ main #about small,
+#darkSwitch:checked ~ main #about h1 > span,
+#darkSwitch:checked ~ main #about p {
+  color: white;
+}
+
+/* Section 2 - Projects */
+
+#darkSwitch:checked ~ main #projects h2,
+#darkSwitch:checked ~ main #projects #arrows-left,
+#darkSwitch:checked ~ main #projects #arrows-right {
+  color: white;
+}
+
+#darkSwitch:checked
+  ~ main
+  #projects
+  #slide1:checked
+  ~ #bullets
+  label:nth-child(1),
+#darkSwitch:checked
+  ~ main
+  #projects
+  #slide2:checked
+  ~ #bullets
+  label:nth-child(2),
+#darkSwitch:checked
+  ~ main
+  #projects
+  #slide3:checked
+  ~ #bullets
+  label:nth-child(3),
+#darkSwitch:checked
+  ~ main
+  #projects
+  #slide4:checked
+  ~ #bullets
+  label:nth-child(4),
+#darkSwitch:checked
+  ~ main
+  #projects
+  #slide5:checked
+  ~ #bullets
+  label:nth-child(5) {
+  background: #ffc200;
+}
+
+/* Section 3 - Resume */
+
+#darkSwitch:checked ~ main #resume h2,
+#darkSwitch:checked ~ main #resume small,
+#darkSwitch:checked ~ main #resume p {
+  color: white;
+}
+
+#darkSwitch:checked ~ main #resume small,
+#darkSwitch:checked ~ main #resume h2 {
+  letter-spacing: 0;
+}
+
+#darkSwitch:checked ~ main #resume div .year-container {
+  background-color: #ffc200;
+}
+
+#darkSwitch:checked ~ main #resume div .year-container span {
+  color: #1f1f1f;
+}
+
+#darkSwitch:checked ~ main #resume div::before {
+  background-color: #ffc200;
+}
+
+/* Section 4 - Contact */
+
+#darkSwitch:checked ~ main #contact h2 {
+  color: white;
+}
+
+#darkSwitch:checked ~ main #contact form button[type="submit"] {
+  color: #1f1f1f;
+}
+
+#darkSwitch:checked ~ main #contact form button[type="submit"]:hover {
+  color: white;
+}
+
+/* Footer */
+
+#darkSwitch:checked ~ footer p {
+  color: white;
+}
+
+/*  ================== 
+Hamburguer menu 
+================== */
+
+.hamburguer {
+  cursor: pointer;
+  width: 31px;
+  height: 18px;
+  transition: all 0.25s;
+  position: relative;
+}
+
+.hamburguer-top,
+.hamburguer-middle,
+.hamburguer-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 31px;
+  height: 2px;
+  background: black;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburguer-middle {
+  transform: translateY(7px);
+}
+
+.hamburguer-bottom {
+  transform: translateY(14px);
+}
+
+.menu-btn:checked ~ div .hamburguer label .hamburguer-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.menu-btn:checked ~ div .hamburguer label .hamburguer-middle {
+  display: none;
+}
+
+.menu-btn:checked ~ div .hamburguer label .hamburguer-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
+
+.nav-links-list {
+  transition: transform 2s linear;
+  z-index: -1;
+  position: relative;
+  transform-origin: top;
+  transform: translateY(-100px);
+}
+
+.menu-btn:checked ~ ul {
+  display: block;
+}
+
+/*  ================== 
+    Animated Skills 
+================== */
+
+.animated-item {
+  color: #ffc200;
+}
+
+.animated-item {
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  animation: BottomTotop 6s linear infinite 0s;
+}
+.animated-item:nth-child(2n + 2) {
+  animation-delay: 2s;
+}
+.animated-item:nth-child(3n + 3) {
+  animation-delay: 4s;
+}
+
+@keyframes BottomTotop {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*  ================== 
+  Slider con arrows
+================== */
+#slider label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Mueve el inner a la posicion -X% de acuerdo al input radio o flecha que se clickee  */
+#slide1:checked ~ .slide-container #slides .inner {
+  transform: translateX(0);
+}
+#slide2:checked ~ .slide-container #slides .inner {
+  transform: translateX(-20%);
+}
+#slide3:checked ~ .slide-container #slides .inner {
+  transform: translateX(-40%);
+}
+#slide4:checked ~ .slide-container #slides .inner {
+  transform: translateX(-60%);
+}
+#slide5:checked ~ .slide-container #slides .inner {
+  transform: translateX(-80%);
+}
+
+/* Hace que haya un inner que tenga 4 veces el tamaño original porque hay 4 elementos */
+#slides .inner {
+  transition: transform 0.25s ease;
+  width: 500%;
+  display: flex;
+}
+
+/* Hace que todos los divs con clase slide ocupen n/100 width total*/
+#slides .slide {
+  width: 20%;
+}
+
+/* 
+  Si el input con ID X se checkea, aparecen las flechas correspondientes para
+  que cada uno apunte a la imagen siguiente y previa
+*/
+#slide1:checked ~ .slide-container #arrows-right label:nth-child(2),
+#slide2:checked ~ .slide-container #arrows-right label:nth-child(3),
+#slide3:checked ~ .slide-container #arrows-right label:nth-child(4),
+#slide4:checked ~ .slide-container #arrows-right label:nth-child(5),
+#slide5:checked ~ .slide-container #arrows-right label:nth-child(1) {
+  display: block;
+}
+#slide1:checked ~ .slide-container #arrows-left label:nth-child(5),
+#slide2:checked ~ .slide-container #arrows-left label:nth-child(1),
+#slide3:checked ~ .slide-container #arrows-left label:nth-child(2),
+#slide4:checked ~ .slide-container #arrows-left label:nth-child(3),
+#slide5:checked ~ .slide-container #arrows-left label:nth-child(4) {
+  display: block;
+}
+
+/* Muestra en los bullets qué imagen está seleccionada según el ID del input */
+#slide1:checked ~ #bullets label:nth-child(1),
+#slide2:checked ~ #bullets label:nth-child(2),
+#slide3:checked ~ #bullets label:nth-child(3),
+#slide4:checked ~ #bullets label:nth-child(4),
+#slide5:checked ~ #bullets label:nth-child(5) {
+  background: #444;
+}

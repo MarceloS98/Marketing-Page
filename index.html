@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/css/output.css" />
+    <script
+      src="https://kit.fontawesome.com/450cb384cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <!-- Dark mode switcher -->
+    <input type="checkbox" id="darkSwitch" class="hidden">
+    <!-- Header -->
+    <header class=" fixed top-0 right-0 left-0 z-50 bg-white p-5 nav-links w-screen">
+      <!-- Nav  -->
+      <nav class="container sm:flex sm:items-center sm:justify-between">
+        <!-- Input que linkea el burguer menu con los navigation links -->
+        <input
+          type="checkbox"
+          id="menu-btn"
+          class="menu-btn hidden"
+        >
+        <!-- Nav flex container -->
+        <div class="flex items-center justify-between">
+          <!-- Logo container -->
+          <div class="logo">
+            <!-- Actual logo -->
+            <a href="#" class="hover:text-yellow transition-colors duration-300">
+              <i class="fa-solid fa-user mr-3 text-[40px]"></i>
+              <span class="text-xl font-bold">Marvel</span>
+            </a>
+          </div>
+          <!-- Hamburguer Icon -->
+          <div class="hamburguer">
+            <label for="menu-btn" class="block sm:hidden">
+              <span class="hamburguer-top"></span>
+              <span class="hamburguer-middle"></span>
+              <span class="hamburguer-bottom"></span>
+            </label>
+          </div>
+          </input>
+        </div>
+        <!-- Navigation links -->
+        <ul
+          class="flex hidden flex-col pt-3 text-center font-bold text-linksGray sm:flex sm:flex-row sm:gap-8"
+        >
+          <a href="#" class="hover:text-yellow transition ease-linear">
+            <li class="p-1">About</li>
+          </a>
+          <a href="#projects" class="hover:text-yellow transition ease-linear">
+            <li class="p-1">Projects</li>
+          </a>
+          <a href="#resume" class="hover:text-yellow transition ease-linear">
+            <li class="p-1">Resume</li>
+          </a>
+          <a href="#contact" class="hover:text-yellow transition ease-linear delay-75">
+            <li class="p-1">Contact</li>
+          </a>
+        </ul>
+        <!-- Dark mode -->
+        <div class="hidden lg:flex items-center gap-1">
+          <label for="darkSwitch" class="darkSwitchBtn cursor-pointer">
+            <i class="fa-solid fa-moon text-2xl rotate-[-15deg]"></i>
+            <span class="text-headerBlack font-bold">Color Mode</span>
+          </label>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Section 1 About -->
+      <section
+        class="container pt-28 lg:pt-48 lg:mb-10 lg:flex lg:w-auto lg:items-center lg:justify-between"
+        id="about"
+      >
+        <!-- Hefo info container -->
+        <div class="lg:w-6/12">
+          <div class="my-5 lg:mt-0">
+            <small class="text-sm font-bold text-textGray"
+              >Welcome to my portfolio website!
+            </small>
+          </div>
+          <!-- Hero title -->
+          <h1
+            class="relative mb-14 sm:mb-6 sm:flex sm:gap-x-4 lg:mb-16 lg:flex-col lg:gap-1"
+          >
+            <span
+              class="md:text-[44px] font-bold text-headerBlack sm:mb-0 text-[38px]"
+              >Hey folks, I'm</span
+            >
+            <!-- Animated info -->
+            <div
+              class="animated-info relative min-w-[250px] sm:top-2 lg:top-0 lg:self-start"
+            >
+              <span
+                class="animated-item text-[30px] font-bold text-yellow sm:text-[38px]"
+                >Web Designer</span
+              >
+              <span
+                class="animated-item text-[30px] font-bold text-yellow sm:text-[38px]"
+                >UI Specialist</span
+              >
+              <span
+                class="animated-item text-[30px] font-bold text-yellow sm:text-[38px]"
+                >Marvel Sann</span
+              >
+            </div>
+          </h1>
+          <!-- Hero text -->
+          <p class="mb-5 text-lg text-textGray">
+            Building a successful product is a challenge. I am highly energetic
+            in user experience design, interfaces and web development.
+          </p>
+          <!-- Buttons container -->
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <button
+              class="rounded-full bg-lightGray px-7 py-3 text-sm font-bold text-darkGray hover:text-yellow transition ease-linear delay-75"
+            >
+              <i class="fa-solid fa-file mr-1 "></i> Download Resume
+            </button>
+            <a href="#contact"
+              class="text-center rounded-full bg-darkGray px-7 py-3 text-sm font-semibold text-white hover:bg-yellow transition ease-linear delay-75"
+            >
+              Get a free quote
+            </a>
+          </div>
+        </div>
+        <!-- Img container -->
+        <div class="mt-20 lg:m-0 lg:w-6/12 lg:max-w-[445px]">
+          <img
+            class="lg:max-w-full"
+            src="./src/assets/img/hero-illustration.svg"
+            alt="hero-img"
+          />
+        </div>
+      </section>
+      <!-- Section 2 Projects -->
+      <section class="container pt-28 px-5" id="projects">
+        <!-- Title -->
+        <h2
+          class="text-center text-[32px] font-bold text-titleBlack sm:mx-auto sm:w-7/12 md:text-4xl"
+        >
+          Things I have designed for digital media agencies
+        </h2>
+
+        <!-- Slider -->
+        <div id="slider" class="">
+          <!-- Mobile slider -->
+          <div class="flex snap-x snap-mandatory overflow-x-scroll sm:hidden slides_container" id="slider">
+
+            <div class="image w-full shrink-0 snap-center slide_img" id="img1">
+              <img class="w-full" src="./src/assets/img/project-image01.png" alt="#" />
+            </div>
+            <div class="image w-full shrink-0 snap-center slide_img" id="img2">
+              <img class="w-full" src="./src/assets/img/project-image02.png" alt="#" />
+            </div>
+            <div class="image w-full shrink-0 snap-center slide_img" id="img3">
+              <img class="w-full" src="./src/assets/img/project-image03.png" alt="#" />
+            </div>
+            <div class="image w-full shrink-0 snap-center slide_img" id="img4">
+              <img class="w-full" src="./src/assets/img/project-image04.png" alt="#" />
+            </div>
+            <div class="image w-full shrink-0 snap-center slide_img" id="img5">
+              <img class="w-full" src="./src/assets/img/project-image05.png" alt="#" />
+            </div>
+
+          </div>
+
+
+          <!-- Slides con arrows -->
+          <input
+            type="radio"
+            name="slider"
+            id="slide1"
+            class="hidden"
+            checked
+          />
+          <input type="radio" name="slider" id="slide2" class="hidden" />
+          <input type="radio" name="slider" id="slide3" class="hidden" />
+          <input type="radio" name="slider" id="slide4" class="hidden" />
+          <input type="radio" name="slider" id="slide5" class="hidden" />
+
+          <div class="hidden sm:flex slide-container items-center justify-between">
+            <!-- img arrows -->
+            <div class="hidden sm:block left-arrows relative text-6xl" id="arrows-left">
+              <label for="slide1" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide2" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide3" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide4" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
+              <label for="slide5" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
+            </div>
+
+            <!-- Slides start -->
+            <div id="slides">
+              <div id="overflow" class="w-full sm:overflow-hidden overflow-scroll">
+                <div class="inner snap-mandatory">
+                  <!-- Slide 1 -->
+                  <div class="slide slide_1 snap-center">
+                    <div class="slide-content flex">
+                      <img
+                        class="w-full"
+                        src="./src/assets/img/project-image01.png"
+                        alt="#"
+                      />
+                    </div>
+                  </div>
+                  <!-- Slide 2 -->
+                  <div class="slide slide_2 snap-center">
+                    <div class="slide-content">
+                      <img
+                        class="w-full"
+                        src="./src/assets/img/project-image02.png"
+                        alt="#"
+                      />
+                    </div>
+                  </div>
+                  <!-- Slide 3 -->
+                  <div class="slide slide_3 snap-center">
+                    <div class="slide-content">
+                      <img
+                        class="w-full"
+                        src="./src/assets/img/project-image03.png"
+                        alt="#"
+                      />
+                    </div>
+                  </div>
+                  <!-- Slide 4 -->
+                  <div class="slide slide_4 snap-center">
+                    <div class="slide-content">
+                      <img
+                        class="w-full"
+                        src="./src/assets/img/project-image04.png"
+                        alt="#"
+                      />
+                    </div>
+                  </div>
+                  <!-- Slide 5 -->
+                  <div class="slide slide_5 snap-center">
+                    <div class="slide-content">
+                      <img
+                        class="w-full"
+                        src="./src/assets/img/project-image05.png"
+                        alt="#"
+                      />
+                    </div>
+                  </div>
+                  <!-- final de slide5 -->
+                </div>
+                <!-- Final de inner -->
+              </div>
+              <!-- Final de overflow -->
+            </div>
+            <!-- Final de slides -->
+
+            <!-- Right arrows -->
+            <div class="hidden sm:block right-arrows text-6xl" id="arrows-right">
+              <label for="slide1" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-right"></i
+              ></label>
+              <label for="slide2" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-right"></i
+              ></label>
+              <label for="slide3" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-right"></i
+              ></label>
+              <label for="slide4" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-right"></i
+              ></label>
+              <label for="slide5" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-right"></i
+              ></label>
+            </div>
+          </div>
+          <!-- Final del contenedor de slides y arrows -->
+
+          <!-- Bullets nav -->
+          <div id="bullets" class="hidden sm:block text-center">
+            <label for="slide1" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
+            <label for="slide2" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
+            <label for="slide3" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
+            <label for="slide4" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
+            <label for="slide5" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
+          </div>
+        </div>
+        <!-- Final de slider -->
+      </section>
+
+      <!-- Section 3 Resume -->
+      <section class="container lg:flex lg:gap-16 pt-28" id="resume">
+        <!-- Experiences container -->
+        <div class="mb-20">
+          <h2
+            class="relative mb-6 text-title font-bold text-titleBlack md:text-4xl"
+          >
+            Experiences
+          </h2>
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2019</span>
+              </div>
+              <!-- Year section end -->
+              
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">Project Manager</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Best Studio</small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  Proin ornare non purus ut rutrum. Nulla facilisi. Aliquam
+                  laoreet libero ac pharetra feugiat. Cras ac fermentum nunc, a
+                  faucibus nunc.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2018</span>
+              </div>
+              <!-- Year section end -->
+
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">UX Designer</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Digital Ace</small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  Fusce rutrum augue id orci rhoncus molestie. Nunc auctor dignissim lacus vel iaculis.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+          
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2016</span>
+              </div>
+              <!-- Year section end -->
+
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">UI Freelancer</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px] hidden"></small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  Sed fringilla vitae enim sit amet cursus. Sed cursus dictum tortor quis pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-[''] before:hidden"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2014</span>
+              </div>
+              <!-- Year section end -->
+
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">Junior Designer</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Crafted Co.</small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+        </div>
+        <!-- Experiences container end -->
+        <!-- ==================================================================== -->
+        <!-- Educations container -->
+        <div>
+          <h2
+            class="relative mb-6 text-title font-bold text-titleBlack md:text-4xl"
+          >
+            Educations
+          </h2>
+
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2017</span>
+              </div>
+              <!-- Year section end -->
+
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">Mobile Web</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Master Design</small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  Please tell your friends about Tooplate website. That would be very helpful. We need your support.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2015</span>
+              </div>
+              <!-- Year section end -->
+
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">User Interfaces</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Creative Agency</small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  Tooplate is a great website to download HTML templates without any login or email.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+
+          <!-- Timeline point -->
+          <div class="relative py-5">
+            <!-- Year container -->
+            <div
+              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-[''] before:hidden"
+            >
+              <!-- Year section -->
+              <div
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+              >
+                <span class="font-bold text-white">2013</span>
+              </div>
+              <!-- Year section end -->
+
+              <!-- Information section-->
+              <div class="flex flex-col gap-1">
+                <!-- Year title and role container -->
+                <div
+                  class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
+                >
+                  <h2 class="text-subtitle font-bold text-titleBlack">Artwork Design</h2>
+                  <small class="text-base font-bold text-darkGray tracking-[-1px]">New Art School</small>
+                </div>
+                <!-- Text -->
+                <p class="text-lg text-textGray max-w-[425px]">
+                  You can freely use Tooplate's templates for your business or personal sites. You cannot redistribute this template without a permission.
+                </p>
+              </div>
+              <!-- Information section end -->
+            </div>
+          </div>
+          <!-- Timeline point end -->
+
+        </div>
+        <!-- Educations container end -->
+      </section>
+
+      <!-- ==================================================================================== -->
+
+      <!-- Contact section -->
+      <section class="container pb-20 pt-28" id="contact">
+        <!-- Flex container -->
+        <div class="lg:flex lg:gap-14">
+          <!-- Container de mapa con parte de abajo -->
+          <div class="mb-11 lg:w-6/12">
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe
+                  id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=asuncion&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0"
+                  scrolling="no"
+                  marginheight="0"
+                  marginwidth="0"
+                  class="h-full w-full"
+                ></iframe
+                ><a href="https://www.whatismyip-address.com"></a><br /><style>
+                  .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 300px;
+                    width: 100%;
+                  }</style
+                ><a href="https://www.embedgooglemap.net"></a
+                ><style>
+                  .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 300px;
+                    width: 100%;
+                  }
+                </style>
+              </div>
+            </div>
+            <!-- Flex container de la parte de abajo del mapa -->
+            <div class="bottom-map flex justify-between bg-darkGray px-8 py-6">
+              <!-- Texto container -->
+              <div>
+                <h2 class="mb-4 text-subtitle font-bold text-white">
+                  Say hello
+                </h2>
+                <p class="text-lg text-white">010 020 0960</p>
+                <a href="mailto:hello@company.com">
+                  <p class="text-lg text-white mb-4 hover:text-yellow transition-colors">hello@company.co</p>
+                </a>
+              </div>
+              <!-- Iconos container-->
+              <div class="flex flex-col items-center justify-evenly text-white">
+                <i class="fa-solid fa-basketball hover:text-yellow transition-colors"></i>
+                <i class="fa-brands fa-instagram hover:text-yellow transition-colors"></i>
+                <i class="fa-brands fa-youtube hover:text-yellow transition-colors"></i>
+              </div>
+            </div>
+          </div>
+          <!-- Container de formulario -->
+          <div>
+            <h2 class="mb-8 text-title font-bold text-titleBlack md:text-4xl">
+              Interested to work together? Let's talk
+            </h2>
+            <form action method="get">
+              <div>
+                <!-- Container de input nombre y email -->
+                <!-- Input nombre -->
+                <div class="lg:flex lg:justify-between lg:gap-6">
+                  <div class="w-full">
+                    <input
+                      class="my-4 h-12 w-full border-[1px] border-inputBorder py-[6px] px-3 font-bold placeholder:text-placeHolder placeholder:opacity-80 rounded-sm transition-colors hover:border-yellow focus:border-yellow outline-0"
+                      type="text"
+                      placeholder="Your Name"
+                      name="name"
+                    />
+                  </div>
+                  <!-- Input email -->
+                  <div class="w-full">
+                    <input
+                      class="my-4 h-12 w-full border-[1px] border-inputBorder py-[6px] px-3 font-bold placeholder:text-placeHolder  placeholder:opacity-80 rounded-sm transition-colors hover:border-yellow focus:border-yellow outline-0"
+                      type="text"
+                      placeholder="Email"
+                      name="email"
+                    />
+                  </div>  
+                </div>
+                <!-- Input mensaje -->
+                <div>
+                  <textarea
+                    class="mt-4 mb-7 h-auto w-full border-[1px] border-inputBorder py-[6px] px-3 font-bold placeholder:text-placeHolder  placeholder:opacity-80 rounded-sm transition-colors hover:border-yellow focus:border-yellow outline-0"
+                    name="message"
+                    rows="6"
+                    placeholder="Message"
+                    name="message"
+                  ></textarea>
+                </div>
+                <!-- Input send button -->
+                <div class="lg:flex lg:flex-col">
+                  <a href="#" class="lg:self-end lg:w-5/12">
+                    <button 
+                      class="h-12 w-full rounded-full bg-yellow py-[6px] px-3 font-bold text-white   hover:bg-darkGray transition-colors"
+                      type="submit"
+                      >
+                      Send Button
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- End of contact section -->
+    </main>
+    <!-- Footer -->
+    <footer class="pb-10 flex flex-col items-center gap-2">
+      <p class="text-center">
+        Copyright &copy; Company Name. All rights reserved
+      </p>
+      <p class="">Designed by Tooplate</p>
+    </footer>
+
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
