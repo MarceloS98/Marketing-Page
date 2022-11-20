@@ -36,7 +36,7 @@ const navbar = document.querySelector("#header");
 window.addEventListener("scroll", () => {
   let actualScroll = window.scrollY;
   if (actualScroll > lastScroll) {
-    navbar.style.transform = "translateY(-300px)";
+    navbar.style.transform = "translateY(-100px)";
   } else {
     navbar.style.transform = "translateY(0)";
   }
