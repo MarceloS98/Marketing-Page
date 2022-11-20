@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="dark">
   <head lang="en">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,82 +10,82 @@
       href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/dist/css/output.css" />
+    <link rel="stylesheet" href="/src/css/output.css" />
     <script
       src="https://kit.fontawesome.com/450cb384cb.js"
       crossorigin="anonymous"
     ></script>
     <title>Portfolio</title>
   </head>
-  <body>
-    <!-- Dark mode switcher -->
-    <input type="checkbox" id="darkSwitch" class="hidden">
+  <body class="dark:bg-headerBlack">
     <!-- Header -->
-    <header class=" fixed top-0 right-0 left-0 z-50 bg-white p-5 nav-links w-screen">
+    <header
+      id="header"
+      class="nav-links fixed top-0 right-0 left-0 z-50 w-screen bg-white transition-transform duration-500 dark:bg-headerBlack"
+    >
       <!-- Nav  -->
-      <nav class="container sm:flex sm:items-center sm:justify-between">
-        <!-- Input que linkea el burguer menu con los navigation links -->
-        <input
-          type="checkbox"
-          id="menu-btn"
-          class="menu-btn hidden"
-        >
+      <nav class="container p-5 md:flex md:items-center md:justify-between">
         <!-- Nav flex container -->
         <div class="flex items-center justify-between">
           <!-- Logo container -->
           <div class="logo">
-            <!-- Actual logo -->
-            <a href="#" class="hover:text-yellow transition-colors duration-300">
+            <!-- Logo -->
+            <a
+              href="#"
+              class="transition-colors duration-300 hover:text-yellow dark:text-white"
+            >
               <i class="fa-solid fa-user mr-3 text-[40px]"></i>
               <span class="text-xl font-bold">Marvel</span>
             </a>
           </div>
           <!-- Hamburguer Icon -->
-          <div class="hamburguer">
-            <label for="menu-btn" class="block sm:hidden">
-              <span class="hamburguer-top"></span>
-              <span class="hamburguer-middle"></span>
-              <span class="hamburguer-bottom"></span>
-            </label>
+          <div class="hamburguer md:hidden">
+            <span class="hamburguer-top dark:bg-white"></span>
+            <span class="hamburguer-middle dark:bg-white"></span>
+            <span class="hamburguer-bottom dark:bg-white"></span>
           </div>
-          </input>
         </div>
         <!-- Navigation links -->
         <ul
-          class="flex hidden flex-col pt-3 text-center font-bold text-linksGray sm:flex sm:flex-row sm:gap-8"
+          id="mobile-nav"
+          class="hidden flex-col pt-3 text-center font-bold text-linksGray transition-transform duration-500 dark:text-white md:flex md:flex-row md:gap-8 md:pt-0"
         >
-          <a href="#" class="hover:text-yellow transition ease-linear">
+          <a href="#about" class="transition ease-linear hover:text-yellow">
             <li class="p-1">About</li>
           </a>
-          <a href="#projects" class="hover:text-yellow transition ease-linear">
+          <a href="#projects" class="transition ease-linear hover:text-yellow">
             <li class="p-1">Projects</li>
           </a>
-          <a href="#resume" class="hover:text-yellow transition ease-linear">
+          <a href="#resume" class="transition ease-linear hover:text-yellow">
             <li class="p-1">Resume</li>
           </a>
-          <a href="#contact" class="hover:text-yellow transition ease-linear delay-75">
+          <a
+            href="#contact"
+            class="transition delay-75 ease-linear hover:text-yellow"
+          >
             <li class="p-1">Contact</li>
           </a>
         </ul>
-        <!-- Dark mode -->
-        <div class="hidden lg:flex items-center gap-1">
-          <label for="darkSwitch" class="darkSwitchBtn cursor-pointer">
-            <i class="fa-solid fa-moon text-2xl rotate-[-15deg]"></i>
-            <span class="text-headerBlack font-bold">Color Mode</span>
-          </label>
-        </div>
+        <!-- Dark mode button -->
+        <button id="dark-mode" class="hidden items-center gap-1 md:flex">
+          <i
+            class="fa-solid fa-moon rotate-[-15deg] text-2xl dark:text-white"
+          ></i>
+        </button>
       </nav>
     </header>
+    <!-- Header ends -->
+
     <main>
       <!-- Section 1 About -->
       <section
-        class="container pt-28 lg:pt-48 lg:mb-10 lg:flex lg:w-auto lg:items-center lg:justify-between"
+        class="container mb-14 pt-28 lg:mb-10 lg:flex lg:w-auto lg:items-center lg:justify-between lg:pt-48"
         id="about"
       >
-        <!-- Hefo info container -->
+        <!-- Hero info container -->
         <div class="lg:w-6/12">
           <div class="my-5 lg:mt-0">
-            <small class="text-sm font-bold text-textGray"
+            <small class="text-sm font-bold text-textGray dark:text-white"
               >Welcome to my portfolio website!
             </small>
           </div>
@@ -94,7 +94,7 @@
             class="relative mb-14 sm:mb-6 sm:flex sm:gap-x-4 lg:mb-16 lg:flex-col lg:gap-1"
           >
             <span
-              class="md:text-[44px] font-bold text-headerBlack sm:mb-0 text-[38px]"
+              class="text-[38px] font-bold text-headerBlack dark:text-white sm:mb-0 md:text-[44px]"
               >Hey folks, I'm</span
             >
             <!-- Animated info -->
@@ -116,19 +116,20 @@
             </div>
           </h1>
           <!-- Hero text -->
-          <p class="mb-5 text-lg text-textGray">
+          <p class="mb-5 text-lg text-textGray dark:text-white">
             Building a successful product is a challenge. I am highly energetic
             in user experience design, interfaces and web development.
           </p>
           <!-- Buttons container -->
           <div class="flex flex-col gap-3 sm:flex-row">
             <button
-              class="rounded-full bg-lightGray px-7 py-3 text-sm font-bold text-darkGray hover:text-yellow transition ease-linear delay-75"
+              class="rounded-full bg-lightGray px-7 py-3 text-sm font-bold text-darkGray transition delay-75 ease-linear hover:text-yellow"
             >
-              <i class="fa-solid fa-file mr-1 "></i> Download Resume
+              <i class="fa-solid fa-file mr-1"></i> Download Resume
             </button>
-            <a href="#contact"
-              class="text-center rounded-full bg-darkGray px-7 py-3 text-sm font-semibold text-white hover:bg-yellow transition ease-linear delay-75"
+            <a
+              href="#contact"
+              class="rounded-full bg-darkGray px-7 py-3 text-center text-sm font-semibold text-white transition delay-75 ease-linear hover:bg-yellow"
             >
               Get a free quote
             </a>
@@ -143,40 +144,61 @@
           />
         </div>
       </section>
+
       <!-- Section 2 Projects -->
-      <section class="container pt-28 px-5" id="projects">
+      <section class="container mb-14 px-5 pt-14" id="projects">
         <!-- Title -->
         <h2
-          class="text-center text-[32px] font-bold text-titleBlack sm:mx-auto sm:w-7/12 md:text-4xl"
+          class="text-center text-[32px] font-bold text-titleBlack dark:text-white sm:mx-auto sm:w-7/12 md:text-4xl"
         >
           Things I have designed for digital media agencies
         </h2>
 
-        <!-- Slider -->
-        <div id="slider" class="">
+        <!-- Sliders -->
+        <div id="slider">
           <!-- Mobile slider -->
-          <div class="flex snap-x snap-mandatory overflow-x-scroll sm:hidden slides_container" id="slider">
-
-            <div class="image w-full shrink-0 snap-center slide_img" id="img1">
-              <img class="w-full" src="./src/assets/img/project-image01.png" alt="#" />
+          <div
+            class="slides_container flex snap-x snap-mandatory overflow-x-scroll sm:hidden"
+            id="slider"
+          >
+            <div class="image slide_img w-full shrink-0 snap-center" id="img1">
+              <img
+                class="w-full"
+                src="./src/assets/img/project-image01.png"
+                alt="#"
+              />
             </div>
-            <div class="image w-full shrink-0 snap-center slide_img" id="img2">
-              <img class="w-full" src="./src/assets/img/project-image02.png" alt="#" />
+            <div class="image slide_img w-full shrink-0 snap-center" id="img2">
+              <img
+                class="w-full"
+                src="./src/assets/img/project-image02.png"
+                alt="#"
+              />
             </div>
-            <div class="image w-full shrink-0 snap-center slide_img" id="img3">
-              <img class="w-full" src="./src/assets/img/project-image03.png" alt="#" />
+            <div class="image slide_img w-full shrink-0 snap-center" id="img3">
+              <img
+                class="w-full"
+                src="./src/assets/img/project-image03.png"
+                alt="#"
+              />
             </div>
-            <div class="image w-full shrink-0 snap-center slide_img" id="img4">
-              <img class="w-full" src="./src/assets/img/project-image04.png" alt="#" />
+            <div class="image slide_img w-full shrink-0 snap-center" id="img4">
+              <img
+                class="w-full"
+                src="./src/assets/img/project-image04.png"
+                alt="#"
+              />
             </div>
-            <div class="image w-full shrink-0 snap-center slide_img" id="img5">
-              <img class="w-full" src="./src/assets/img/project-image05.png" alt="#" />
+            <div class="image slide_img w-full shrink-0 snap-center" id="img5">
+              <img
+                class="w-full"
+                src="./src/assets/img/project-image05.png"
+                alt="#"
+              />
             </div>
-
           </div>
 
-
-          <!-- Slides con arrows -->
+          <!-- Desktop slider -->
           <input
             type="radio"
             name="slider"
@@ -189,19 +211,37 @@
           <input type="radio" name="slider" id="slide4" class="hidden" />
           <input type="radio" name="slider" id="slide5" class="hidden" />
 
-          <div class="hidden sm:flex slide-container items-center justify-between">
+          <div
+            class="slide-container hidden items-center justify-between sm:flex"
+          >
             <!-- img arrows -->
-            <div class="hidden sm:block left-arrows relative text-6xl" id="arrows-left">
-              <label for="slide1" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
-              <label for="slide2" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
-              <label for="slide3" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
-              <label for="slide4" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
-              <label for="slide5" class="hidden hover:text-yellow"><i class="fa-solid fa-arrow-left"></i></label>
+            <div
+              class="left-arrows relative hidden text-6xl dark:text-white sm:block"
+              id="arrows-left"
+            >
+              <label for="slide1" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-left"></i
+              ></label>
+              <label for="slide2" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-left"></i
+              ></label>
+              <label for="slide3" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-left"></i
+              ></label>
+              <label for="slide4" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-left"></i
+              ></label>
+              <label for="slide5" class="hidden hover:text-yellow"
+                ><i class="fa-solid fa-arrow-left"></i
+              ></label>
             </div>
 
             <!-- Slides start -->
             <div id="slides">
-              <div id="overflow" class="w-full sm:overflow-hidden overflow-scroll">
+              <div
+                id="overflow"
+                class="w-full overflow-scroll sm:overflow-hidden"
+              >
                 <div class="inner snap-mandatory">
                   <!-- Slide 1 -->
                   <div class="slide slide_1 snap-center">
@@ -262,7 +302,10 @@
             <!-- Final de slides -->
 
             <!-- Right arrows -->
-            <div class="hidden sm:block right-arrows text-6xl" id="arrows-right">
+            <div
+              class="right-arrows hidden text-6xl dark:text-white sm:block"
+              id="arrows-right"
+            >
               <label for="slide1" class="hidden hover:text-yellow"
                 ><i class="fa-solid fa-arrow-right"></i
               ></label>
@@ -280,26 +323,41 @@
               ></label>
             </div>
           </div>
-          <!-- Final del contenedor de slides y arrows -->
 
           <!-- Bullets nav -->
-          <div id="bullets" class="hidden sm:block text-center">
-            <label for="slide1" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
-            <label for="slide2" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
-            <label for="slide3" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
-            <label for="slide4" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
-            <label for="slide5" class="inline-block w-[8px] h-[8px] rounded-full bg-[#ccc] mx-[5px]"></label>
+          <div id="bullets" class="hidden text-center sm:block">
+            <label
+              for="slide1"
+              class="mx-[5px] inline-block h-[8px] w-[8px] rounded-full bg-[#ccc]"
+            ></label>
+            <label
+              for="slide2"
+              class="mx-[5px] inline-block h-[8px] w-[8px] rounded-full bg-[#ccc]"
+            ></label>
+            <label
+              for="slide3"
+              class="mx-[5px] inline-block h-[8px] w-[8px] rounded-full bg-[#ccc]"
+            ></label>
+            <label
+              for="slide4"
+              class="mx-[5px] inline-block h-[8px] w-[8px] rounded-full bg-[#ccc]"
+            ></label>
+            <label
+              for="slide5"
+              class="mx-[5px] inline-block h-[8px] w-[8px] rounded-full bg-[#ccc]"
+            ></label>
           </div>
         </div>
-        <!-- Final de slider -->
+        <!-- Desktop slider end -->
+        <!-- Final de sliders -->
       </section>
 
       <!-- Section 3 Resume -->
-      <section class="container lg:flex lg:gap-16 pt-28" id="resume">
+      <section class="container mb-14 pt-14 lg:flex lg:gap-16" id="resume">
         <!-- Experiences container -->
         <div class="mb-20">
           <h2
-            class="relative mb-6 text-title font-bold text-titleBlack md:text-4xl"
+            class="relative mb-6 text-title font-bold text-titleBlack dark:text-white md:text-4xl"
           >
             Experiences
           </h2>
@@ -311,23 +369,32 @@
             >
               <!-- Year section -->
               <div
-                class="year-container year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2019</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2019</span
+                >
               </div>
               <!-- Year section end -->
-              
+
               <!-- Information section-->
               <div class="flex flex-col gap-1">
                 <!-- Year title and role container -->
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">Project Manager</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Best Studio</small>
+                  <h2
+                    class="text-subtitle font-bold text-titleBlack dark:tracking-[0.01rem] dark:text-white"
+                  >
+                    Project Manager
+                  </h2>
+                  <small
+                    class="text-base font-bold tracking-[-1px] text-darkGray dark:tracking-[0.02em] dark:text-white"
+                    >Best Studio</small
+                  >
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
                   Proin ornare non purus ut rutrum. Nulla facilisi. Aliquam
                   laoreet libero ac pharetra feugiat. Cras ac fermentum nunc, a
                   faucibus nunc.
@@ -346,9 +413,11 @@
             >
               <!-- Year section -->
               <div
-                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2018</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2018</span
+                >
               </div>
               <!-- Year section end -->
 
@@ -358,19 +427,27 @@
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">UX Designer</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Digital Ace</small>
+                  <h2
+                    class="text-subtitle font-bold text-titleBlack dark:tracking-[0.01rem] dark:text-white"
+                  >
+                    UX Designer
+                  </h2>
+                  <small
+                    class="text-base font-bold tracking-[-1px] text-darkGray dark:tracking-[0.02em] dark:text-white"
+                    >Digital Ace</small
+                  >
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
-                  Fusce rutrum augue id orci rhoncus molestie. Nunc auctor dignissim lacus vel iaculis.
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
+                  Fusce rutrum augue id orci rhoncus molestie. Nunc auctor
+                  dignissim lacus vel iaculis.
                 </p>
               </div>
               <!-- Information section end -->
             </div>
           </div>
           <!-- Timeline point end -->
-          
+
           <!-- Timeline point -->
           <div class="relative py-5">
             <!-- Year container -->
@@ -379,9 +456,11 @@
             >
               <!-- Year section -->
               <div
-                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2016</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2016</span
+                >
               </div>
               <!-- Year section end -->
 
@@ -391,12 +470,20 @@
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">UI Freelancer</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px] hidden"></small>
+                  <h2
+                    class="text-subtitle font-bold text-titleBlack dark:tracking-[0.01rem] dark:text-white"
+                  >
+                    UI Freelancer
+                  </h2>
+                  <small
+                    class="hidden text-base font-bold tracking-[-1px] text-darkGray dark:text-white"
+                  ></small>
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
-                  Sed fringilla vitae enim sit amet cursus. Sed cursus dictum tortor quis pharetra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
+                  Sed fringilla vitae enim sit amet cursus. Sed cursus dictum
+                  tortor quis pharetra. Pellentesque habitant morbi tristique
+                  senectus et netus et malesuada fames ac turpis egestas.
                 </p>
               </div>
               <!-- Information section end -->
@@ -408,13 +495,15 @@
           <div class="relative py-5">
             <!-- Year container -->
             <div
-              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-[''] before:hidden"
+              class="flex gap-5 before:absolute before:left-[36px] before:hidden before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
             >
               <!-- Year section -->
               <div
-                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2014</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2014</span
+                >
               </div>
               <!-- Year section end -->
 
@@ -424,12 +513,20 @@
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">Junior Designer</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Crafted Co.</small>
+                  <h2
+                    class="text-subtitle font-bold text-titleBlack dark:tracking-[0.01rem] dark:text-white"
+                  >
+                    Junior Designer
+                  </h2>
+                  <small
+                    class="text-base font-bold tracking-[-1px] text-darkGray dark:tracking-[0.02em] dark:text-white"
+                    >Crafted Co.</small
+                  >
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
-                  Cras scelerisque scelerisque condimentum. Nullam at volutpat mi. Nunc auctor ipsum eget magna consequat viverra.
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
+                  Cras scelerisque scelerisque condimentum. Nullam at volutpat
+                  mi. Nunc auctor ipsum eget magna consequat viverra.
                 </p>
               </div>
               <!-- Information section end -->
@@ -442,7 +539,7 @@
         <!-- Educations container -->
         <div>
           <h2
-            class="relative mb-6 text-title font-bold text-titleBlack md:text-4xl"
+            class="relative mb-6 text-title font-bold text-titleBlack dark:text-white md:text-4xl"
           >
             Educations
           </h2>
@@ -455,9 +552,11 @@
             >
               <!-- Year section -->
               <div
-                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2017</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2017</span
+                >
               </div>
               <!-- Year section end -->
 
@@ -467,12 +566,20 @@
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">Mobile Web</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Master Design</small>
+                  <h2
+                    class="text-titleBlac dark:text-whitek text-subtitle font-bold dark:tracking-[0.02em] dark:text-white"
+                  >
+                    Mobile Web
+                  </h2>
+                  <small
+                    class="text-base font-bold tracking-[-1px] text-darkGray dark:tracking-[0.02em] dark:text-white"
+                    >Master Design</small
+                  >
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
-                  Please tell your friends about Tooplate website. That would be very helpful. We need your support.
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
+                  Please tell your friends about Tooplate website. That would be
+                  very helpful. We need your support.
                 </p>
               </div>
               <!-- Information section end -->
@@ -488,9 +595,11 @@
             >
               <!-- Year section -->
               <div
-                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2015</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2015</span
+                >
               </div>
               <!-- Year section end -->
 
@@ -500,12 +609,20 @@
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">User Interfaces</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px]">Creative Agency</small>
+                  <h2
+                    class="text-subtitle font-bold text-titleBlack dark:tracking-[0.01rem] dark:text-white"
+                  >
+                    User Interfaces
+                  </h2>
+                  <small
+                    class="text-base font-bold tracking-[-1px] text-darkGray dark:tracking-[0.02em] dark:text-white"
+                    >Creative Agency</small
+                  >
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
-                  Tooplate is a great website to download HTML templates without any login or email.
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
+                  Tooplate is a great website to download HTML templates without
+                  any login or email.
                 </p>
               </div>
               <!-- Information section end -->
@@ -517,13 +634,15 @@
           <div class="relative py-5">
             <!-- Year container -->
             <div
-              class="flex gap-5 before:absolute before:left-[36px] before:h-[100%] before:w-0.5 before:bg-darkGray before:content-[''] before:hidden"
+              class="flex gap-5 before:absolute before:left-[36px] before:hidden before:h-[100%] before:w-0.5 before:bg-darkGray before:content-['']"
             >
               <!-- Year section -->
               <div
-                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray"
+                class="year-container relative flex h-[75px] w-[75px] shrink-0 items-center justify-center self-start rounded-full bg-darkGray dark:bg-yellow"
               >
-                <span class="font-bold text-white">2013</span>
+                <span class="font-bold text-white dark:text-headerBlack"
+                  >2013</span
+                >
               </div>
               <!-- Year section end -->
 
@@ -533,27 +652,33 @@
                 <div
                   class="sm: flex flex-col gap-1 sm:flex-row sm:items-end sm:gap-5"
                 >
-                  <h2 class="text-subtitle font-bold text-titleBlack">Artwork Design</h2>
-                  <small class="text-base font-bold text-darkGray tracking-[-1px]">New Art School</small>
+                  <h2
+                    class="text-subtitle font-bold text-titleBlack dark:tracking-[0.01rem] dark:text-white"
+                  >
+                    Artwork Design
+                  </h2>
+                  <small
+                    class="text-base font-bold tracking-[-1px] text-darkGray dark:tracking-[0.02em] dark:text-white"
+                    >New Art School</small
+                  >
                 </div>
                 <!-- Text -->
-                <p class="text-lg text-textGray max-w-[425px]">
-                  You can freely use Tooplate's templates for your business or personal sites. You cannot redistribute this template without a permission.
+                <p class="max-w-[425px] text-lg text-textGray dark:text-white">
+                  You can freely use Tooplate's templates for your business or
+                  personal sites. You cannot redistribute this template without
+                  a permission.
                 </p>
               </div>
               <!-- Information section end -->
             </div>
           </div>
           <!-- Timeline point end -->
-
         </div>
         <!-- Educations container end -->
       </section>
 
-      <!-- ==================================================================================== -->
-
-      <!-- Contact section -->
-      <section class="container pb-20 pt-28" id="contact">
+      <!-- Section 4 Contact -->
+      <section class="container pb-20 pt-14" id="contact">
         <!-- Flex container -->
         <div class="lg:flex lg:gap-14">
           <!-- Container de mapa con parte de abajo -->
@@ -596,20 +721,32 @@
                 </h2>
                 <p class="text-lg text-white">010 020 0960</p>
                 <a href="mailto:hello@company.com">
-                  <p class="text-lg text-white mb-4 hover:text-yellow transition-colors">hello@company.co</p>
+                  <p
+                    class="mb-4 text-lg text-white transition-colors hover:text-yellow"
+                  >
+                    hello@company.co
+                  </p>
                 </a>
               </div>
               <!-- Iconos container-->
               <div class="flex flex-col items-center justify-evenly text-white">
-                <i class="fa-solid fa-basketball hover:text-yellow transition-colors"></i>
-                <i class="fa-brands fa-instagram hover:text-yellow transition-colors"></i>
-                <i class="fa-brands fa-youtube hover:text-yellow transition-colors"></i>
+                <i
+                  class="fa-solid fa-basketball transition-colors hover:text-yellow"
+                ></i>
+                <i
+                  class="fa-brands fa-instagram transition-colors hover:text-yellow"
+                ></i>
+                <i
+                  class="fa-brands fa-youtube transition-colors hover:text-yellow"
+                ></i>
               </div>
             </div>
           </div>
           <!-- Container de formulario -->
           <div>
-            <h2 class="mb-8 text-title font-bold text-titleBlack md:text-4xl">
+            <h2
+              class="mb-8 text-title font-bold text-titleBlack dark:text-white md:text-4xl"
+            >
               Interested to work together? Let's talk
             </h2>
             <form action method="get">
@@ -619,7 +756,7 @@
                 <div class="lg:flex lg:justify-between lg:gap-6">
                   <div class="w-full">
                     <input
-                      class="my-4 h-12 w-full border-[1px] border-inputBorder py-[6px] px-3 font-bold placeholder:text-placeHolder placeholder:opacity-80 rounded-sm transition-colors hover:border-yellow focus:border-yellow outline-0"
+                      class="my-4 h-12 w-full rounded-sm border-[1px] border-inputBorder py-[6px] px-3 font-bold outline-0 transition-colors placeholder:text-placeHolder placeholder:opacity-80 hover:border-yellow focus:border-yellow"
                       type="text"
                       placeholder="Your Name"
                       name="name"
@@ -628,17 +765,17 @@
                   <!-- Input email -->
                   <div class="w-full">
                     <input
-                      class="my-4 h-12 w-full border-[1px] border-inputBorder py-[6px] px-3 font-bold placeholder:text-placeHolder  placeholder:opacity-80 rounded-sm transition-colors hover:border-yellow focus:border-yellow outline-0"
+                      class="my-4 h-12 w-full rounded-sm border-[1px] border-inputBorder py-[6px] px-3 font-bold outline-0 transition-colors placeholder:text-placeHolder placeholder:opacity-80 hover:border-yellow focus:border-yellow"
                       type="text"
                       placeholder="Email"
                       name="email"
                     />
-                  </div>  
+                  </div>
                 </div>
                 <!-- Input mensaje -->
                 <div>
                   <textarea
-                    class="mt-4 mb-7 h-auto w-full border-[1px] border-inputBorder py-[6px] px-3 font-bold placeholder:text-placeHolder  placeholder:opacity-80 rounded-sm transition-colors hover:border-yellow focus:border-yellow outline-0"
+                    class="mt-4 mb-7 h-auto w-full rounded-sm border-[1px] border-inputBorder py-[6px] px-3 font-bold outline-0 transition-colors placeholder:text-placeHolder placeholder:opacity-80 hover:border-yellow focus:border-yellow"
                     name="message"
                     rows="6"
                     placeholder="Message"
@@ -647,11 +784,11 @@
                 </div>
                 <!-- Input send button -->
                 <div class="lg:flex lg:flex-col">
-                  <a href="#" class="lg:self-end lg:w-5/12">
-                    <button 
-                      class="h-12 w-full rounded-full bg-yellow py-[6px] px-3 font-bold text-white   hover:bg-darkGray transition-colors"
+                  <a href="#" class="lg:w-5/12 lg:self-end">
+                    <button
+                      class="h-12 w-full rounded-full bg-yellow py-[6px] px-3 font-bold text-white transition-colors hover:bg-darkGray dark:text-textGray dark:hover:text-white"
                       type="submit"
-                      >
+                    >
                       Send Button
                     </button>
                   </a>
@@ -664,7 +801,7 @@
       <!-- End of contact section -->
     </main>
     <!-- Footer -->
-    <footer class="pb-10 flex flex-col items-center gap-2">
+    <footer class="flex flex-col items-center gap-2 pb-10 dark:text-white">
       <p class="text-center">
         Copyright &copy; Company Name. All rights reserved
       </p>

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 h1,
 h2,
 h3,
@@ -13,129 +17,7 @@ h6 {
 }
 
 /*  ================== 
-      Dark Mode
-================== */
-
-/* General */
-
-#darkSwitch:checked ~ main,
-#darkSwitch:checked ~ footer {
-  background-color: #1f1f1f;
-}
-
-/* Header */
-
-#darkSwitch:checked ~ header {
-  background: #1f1f1f;
-}
-
-#darkSwitch:checked ~ header nav .hamburguer label span {
-  background-color: white;
-}
-
-#darkSwitch:checked ~ header nav .logo,
-#darkSwitch:checked ~ header nav .darkSwitchBtn i,
-#darkSwitch:checked ~ header nav .darkSwitchBtn span,
-#darkSwitch:checked ~ header nav ul {
-  color: white;
-}
-
-/* Section 1 - About */
-
-#darkSwitch:checked ~ main #about small,
-#darkSwitch:checked ~ main #about h1 > span,
-#darkSwitch:checked ~ main #about p {
-  color: white;
-}
-
-/* Section 2 - Projects */
-
-#darkSwitch:checked ~ main #projects h2,
-#darkSwitch:checked ~ main #projects #arrows-left,
-#darkSwitch:checked ~ main #projects #arrows-right {
-  color: white;
-}
-
-#darkSwitch:checked
-  ~ main
-  #projects
-  #slide1:checked
-  ~ #bullets
-  label:nth-child(1),
-#darkSwitch:checked
-  ~ main
-  #projects
-  #slide2:checked
-  ~ #bullets
-  label:nth-child(2),
-#darkSwitch:checked
-  ~ main
-  #projects
-  #slide3:checked
-  ~ #bullets
-  label:nth-child(3),
-#darkSwitch:checked
-  ~ main
-  #projects
-  #slide4:checked
-  ~ #bullets
-  label:nth-child(4),
-#darkSwitch:checked
-  ~ main
-  #projects
-  #slide5:checked
-  ~ #bullets
-  label:nth-child(5) {
-  background: #ffc200;
-}
-
-/* Section 3 - Resume */
-
-#darkSwitch:checked ~ main #resume h2,
-#darkSwitch:checked ~ main #resume small,
-#darkSwitch:checked ~ main #resume p {
-  color: white;
-}
-
-#darkSwitch:checked ~ main #resume small,
-#darkSwitch:checked ~ main #resume h2 {
-  letter-spacing: 0;
-}
-
-#darkSwitch:checked ~ main #resume div .year-container {
-  background-color: #ffc200;
-}
-
-#darkSwitch:checked ~ main #resume div .year-container span {
-  color: #1f1f1f;
-}
-
-#darkSwitch:checked ~ main #resume div::before {
-  background-color: #ffc200;
-}
-
-/* Section 4 - Contact */
-
-#darkSwitch:checked ~ main #contact h2 {
-  color: white;
-}
-
-#darkSwitch:checked ~ main #contact form button[type="submit"] {
-  color: #1f1f1f;
-}
-
-#darkSwitch:checked ~ main #contact form button[type="submit"]:hover {
-  color: white;
-}
-
-/* Footer */
-
-#darkSwitch:checked ~ footer p {
-  color: white;
-}
-
-/*  ================== 
-Hamburguer menu 
+    Hamburguer menu 
 ================== */
 
 .hamburguer {
@@ -167,15 +49,15 @@ Hamburguer menu
   transform: translateY(14px);
 }
 
-.menu-btn:checked ~ div .hamburguer label .hamburguer-top {
+.hamburguer.active .hamburguer-top {
   transform: rotate(45deg) translateY(6px) translate(6px);
 }
 
-.menu-btn:checked ~ div .hamburguer label .hamburguer-middle {
+.hamburguer.active .hamburguer-middle {
   display: none;
 }
 
-.menu-btn:checked ~ div .hamburguer label .hamburguer-bottom {
+.hamburguer.active .hamburguer-bottom {
   transform: rotate(-45deg) translateY(6px) translate(-6px);
 }
 
@@ -187,8 +69,8 @@ Hamburguer menu
   transform: translateY(-100px);
 }
 
-.menu-btn:checked ~ ul {
-  display: block;
+ul#mobile-nav.active {
+  display: flex;
 }
 
 /*  ================== 
@@ -244,7 +126,7 @@ Hamburguer menu
 }
 
 /*  ================== 
-  Slider con arrows
+    Slider con arrows
 ================== */
 #slider label {
   cursor: pointer;
@@ -306,4 +188,12 @@ Hamburguer menu
 #slide4:checked ~ #bullets label:nth-child(4),
 #slide5:checked ~ #bullets label:nth-child(5) {
   background: #444;
+}
+
+html.dark #slide1:checked ~ #bullets label:nth-child(1),
+html.dark #slide2:checked ~ #bullets label:nth-child(2),
+html.dark #slide3:checked ~ #bullets label:nth-child(3),
+html.dark #slide4:checked ~ #bullets label:nth-child(4),
+html.dark #slide5:checked ~ #bullets label:nth-child(5) {
+  background: #ffc200;
 }
