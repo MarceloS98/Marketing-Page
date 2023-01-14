@@ -638,10 +638,6 @@ video {
   margin-bottom: 1.75rem;
 }
 
-.mb-28 {
-  margin-bottom: 7rem;
-}
-
 .inline-block {
   display: inline-block;
 }
@@ -869,16 +865,16 @@ video {
   padding-top: 7rem;
 }
 
+.pt-14 {
+  padding-top: 3.5rem;
+}
+
 .pb-20 {
   padding-bottom: 5rem;
 }
 
 .pb-10 {
   padding-bottom: 2.5rem;
-}
-
-.pt-14 {
-  padding-top: 3.5rem;
 }
 
 .text-center {
@@ -1446,10 +1442,6 @@ html.dark #slide5:checked ~ #bullets label:nth-child(5) {
 
   .md\:pt-0 {
     padding-top: 0px;
-  }
-
-  .md\:pt-28 {
-    padding-top: 7rem;
   }
 
   .md\:text-\[44px\] {
